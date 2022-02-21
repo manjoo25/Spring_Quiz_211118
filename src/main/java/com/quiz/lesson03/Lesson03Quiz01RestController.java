@@ -16,12 +16,10 @@ public class Lesson03Quiz01RestController {
 	private RealEstateBO realEstateBO;
 	
 	// 요청 URL : http://localhost/lesson03/quiz01/1?id=20
-	@RequestMapping("1")
+	@RequestMapping("/1")
 	public RealEstate quiz01_1(
 			@RequestParam(value="id") int id
 	){
 		return realEstateBO.getRealEstate(id);
 	}
-
-	
 }
