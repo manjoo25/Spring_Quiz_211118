@@ -35,4 +35,8 @@ public class RealEstateBO {
 	public int addRealEstateAsField(String address, int area, String type, int price, int rentPrice) {
 		return realEstateDAO.insertRealEstateAsField(address, area, type, price, rentPrice);
 	}
+	
+	public RealEstate getRealEstateRealtorId(int realtorId) {
+		return realEstateDAO.selectRealEstateRealtorId(realtorId);
+	}
 }
