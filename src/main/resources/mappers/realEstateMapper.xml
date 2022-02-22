@@ -3,7 +3,7 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="com.quiz.lesson03.dao.RealEstateDAO">
-<!-- 	<select id="selectRealEstate" parameterType="int" resultType="com.quiz.lesson03.model.RealEstate">
+	<select id="selectRealEstate" parameterType="int" resultType="com.quiz.lesson03.model.RealEstate">
 		SELECT
 			`id`
 			, `realtorId`
@@ -18,9 +18,9 @@
 			`real_estate`
 		WHERE
 			`id` = #{id}
-	</select> -->
+	</select>
 	
-	<select id="selectRealEstate" parameterType="integer" resultType="com.quiz.lesson03.model.RealEstate">
+	<select id="selectRealEstate" parameterType="hashmap" resultType="com.quiz.lesson03.model.RealEstate">
 		SELECT
 			`id`
 			, `realtorId`
@@ -35,6 +35,22 @@
 			`real_estate`
 		WEHRE
 			`rent_price` <![CDATA[ <= ]]> #{rent_price}
+	</select>
+	<select id="selectRealEstate" parameterType="hashmap" resultType="com.quiz.lesson03.model.RealEstate">
+		SELECT
+			`id`
+			, `realtorId`
+			, `address`
+			, `area`
+			, `type`
+			, `price`
+			, `rentPrice`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`real_estate`
+		WEHRE
+			`area` <![CDATA[ >= ]]> #{area} and `price` <![CDATA[ <= ]]> #{price}
 	</select>
 	
 	

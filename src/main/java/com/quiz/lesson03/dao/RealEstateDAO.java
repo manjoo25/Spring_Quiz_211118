@@ -8,4 +8,8 @@ import com.quiz.lesson03.model.RealEstate;
 public interface RealEstateDAO {
 
 	public RealEstate selectRealEstate(int id);
+	
+	public RealEstate selectRealEstate(Integer rent_price);
+	
+	public RealEstate selectRealEstate(int area, int price);
 }
