@@ -89,6 +89,7 @@
 	</insert>
 	
 	<insert id="insertRealEstateAsField" parameterType="map">
+	<!-- Param 어노테이션이 있으면 parameterType => 무조건 map -->
 		INSERT INTO `real_estate`
 		(
 			`realtorId`
@@ -112,4 +113,25 @@
 			, NOW()
 		)
 	</insert>
+	
+	<update id="updateRealEstateById" parameterType="map">
+	<!-- update하고 나면 끝 결과 값을 불러오지 않는다 => resultType(x) -->
+		UPDATE `real_estate`
+		SET
+			`type` = #{type}
+			, `price` = #{price}
+			, `updatedAt` = NOW()
+			<!-- 이렇게 끝내버리면 모든행이 다 변경되므로 WHERE절 필수!!! -->
+		WHERE
+			`id` = #{id}
+	</update>
+	
+	<delete id="deleteRealEstateById" parameterType="int">
+	<!-- 파라미터가 하나 일 경우 생략 가능 하지만 쓸 것!!! -->
+		DELETE
+		FROM
+			`real_estate`
+		WHERE
+			`id` = #{id}
+	</delete>
 </mapper>

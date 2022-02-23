@@ -34,10 +34,12 @@ public class Lesson03Quiz02RestController {
 	// 요청 URL : http://localhost/lesson03/quiz02/2?realtor_id=5
 	@RequestMapping("/2")
 	
-	public String quiz02_2(
+	public String quiz02_2( // 결과 값으로 돌려줄 형태? => string
 			@RequestParam("realtor_id") int realtorId
 	) {
-		int row = realEstateBO.addRealEstateAsField("썅떼빌리버 오피스텔 814호", 45, "월세", 100000, 120);
+		int row = realEstateBO.addRealEstateAsField(realtorId, "썅떼빌리버 오피스텔 814호", 45, "월세", 100000, 120);
 		return "입력 성공 : " + row;
 	}
+	// 징짜 다해놓고,,, 못하는거 차암,,
+	
 }

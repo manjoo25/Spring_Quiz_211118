@@ -24,11 +24,19 @@ public interface RealEstateDAO {
 	public int insertRealEstate(RealEstate realEstate);
 	
 	public int insertRealEstateAsField(
+			@Param("realtorId") int realtorId,
 			@Param("address") String address,
 			@Param("area") int area,
 			@Param("type") String type,
 			@Param("price") int price,
-			@Param("rentPrice") int rentPrice);
+			@Param("rentPrice") Integer rentPrice); // null 값이 들어갈 수 있으니 integer
 	
-	public RealEstate selectRealEstateRealtorId(int realtorId);
+	// UPDATE
+	public int updateRealEstateById(
+			@Param("id") int id,
+			@Param("type") String type,
+			@Param("price") int price);
+	
+	// DELETE
+	public int deleteRealEstateById(int id);
 }
