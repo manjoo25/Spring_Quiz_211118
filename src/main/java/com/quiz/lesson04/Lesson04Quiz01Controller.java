@@ -61,7 +61,7 @@ public class Lesson04Quiz01Controller {
 	
 	// 요청 URL : http://localhost/lesson04/quiz01/seller_info?id=8
 	public String sellerInfo(Model model,
-			@RequestParam(value="id", defaultValue="1") int id
+			@RequestParam(value="id", required=false) int id
 	) {
 		Seller seller = sellerBO.getSellerById(id);
 		

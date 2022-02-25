@@ -20,7 +20,7 @@ public class SellerBO { // 테이블명 + BO
 		return sellerDAO.selectLastSeller();
 	}
 	
-	public Seller getSellerById(int id) { // Seller 클래스에서 데이터들을 갖고 온다
+	public Seller getSellerById(int id) {
 		return sellerDAO.selectSellerById(id);
 	}
 }
