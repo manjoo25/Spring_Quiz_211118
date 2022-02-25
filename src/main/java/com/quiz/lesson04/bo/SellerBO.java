@@ -20,7 +20,8 @@ public class SellerBO { // 테이블명 + BO
 		return sellerDAO.selectLastSeller();
 	}
 	
-	public Seller getSellerById(int id) {
+	// BO는 따로 만드는게 맞음
+	public Seller getSellerById(int id) { // id를 받아서 seller로 리턴
 		return sellerDAO.selectSellerById(id);
 	}
 }

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>판매자 정보</title>
+<title>공인중개사 추가</title>
 	<!-- bootstrap CDN link -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
@@ -14,10 +14,29 @@
 </head>
 <body>
 	<div class="container">
-		<h2>${subject}</h2>
-		<img src="${seller.profileImageUrl}" alt="프로필" width="100px">
-		<h1>${seller.nickname}</h1>
-		<h3 class="text text-warning">${seller.temperature}</h3>
+		<h1>${subject}</h1>
+		<table class="table table-striped">
+			<tr>
+				<th>ID</th>
+				<td>${realtor.id}</td>
+			</tr>
+			<tr>
+				<th>상호명</th>
+				<td>${realtor.office}</td>
+			</tr>
+			<tr>
+				<th>전화 번호</th>
+				<td>${realtor.phoneNumber}</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td>${realtor.address}</td>
+			</tr>
+			<tr>
+				<th>등급</th>
+				<td>${realtor.grade}</td>
+			</tr>
+		</table>
 	</div>
 </body>
 </html>

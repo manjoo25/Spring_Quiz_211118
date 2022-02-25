@@ -48,24 +48,23 @@ public class Lesson04Quiz01Controller {
 	}
 	
 	// 요청 URL : http://localhost/lesson04/quiz01/seller_info
+	// 요청 URL : http://localhost/lesson04/quiz01/seller_info?id=8
 	// @GetMapping("/seller_info")
 	@RequestMapping("/seller_info")
 	
-	public String sellerInfo(Model model) {
-		Seller seller = sellerBO.getLastSeller();
-		
-		model.addAttribute("seller", seller); // 테이블 이름을 result로 대체?
-		model.addAttribute("subject", "판매자 정보");
-		return "lesson04/seller_info";
-	}
-	
-	// 요청 URL : http://localhost/lesson04/quiz01/seller_info?id=8
-	public String sellerInfo(Model model,
-			@RequestParam(value="id", required=false) int id
+	public String sellerInfo(
+			@RequestParam(value="id", required=false) Integer id, // 비필수 파라미터 허용 => int(x) Integer(o)
+			Model model
 	) {
-		Seller seller = sellerBO.getSellerById(id);
+		Seller seller = null;
+		if (id == null) {
+			seller = sellerBO.getLastSeller();
+		} else {
+			// id != null => id에 값이 들어가는 경우
+			seller = sellerBO.getSellerById(id);
+		}
 		
-		model.addAttribute("seller", seller);
+		model.addAttribute("seller", seller); // 테이블 이름을 result로 대체? ("키", value)
 		model.addAttribute("subject", "판매자 정보");
 		return "lesson04/seller_info";
 	}
