@@ -2,9 +2,10 @@ package com.quiz.lesson05.model;
 
 import java.util.Date;
 
-public class Weather {
+public class WeatherHistory {
 
 	private int id;
+	// @DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date date;
 	private String weather;
 	private double temperatures;

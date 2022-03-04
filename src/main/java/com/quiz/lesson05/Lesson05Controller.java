@@ -11,8 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.quiz.lesson05.bo.WeatherBO;
-import com.quiz.lesson05.model.Weather;
+import com.quiz.lesson05.bo.WeatherHistoryBO;
+import com.quiz.lesson05.model.WeatherHistory;
 
 @Controller
 public class Lesson05Controller {
@@ -196,18 +196,5 @@ public class Lesson05Controller {
 		
 		return "lesson05/quiz04";
 	}
-	
-	@Autowired
-	private WeatherBO weatherBO;
-	
-	// 요청 URL : http://localhost/lesson05/quiz05_1
-	@RequestMapping("/lesson05/quiz05_1")
-	public String quiz05_1(
-			@ModelAttribute Weather weather,
-			Model model
-	) {
-		model.addAttribute("weather", weather);
-		
-		return "lesson05/quiz05_1";
-	}
+
 }
