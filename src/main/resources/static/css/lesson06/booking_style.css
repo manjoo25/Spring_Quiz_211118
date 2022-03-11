@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+#wrap {width: 1200px;}
+
+/* menu 바 */
+.main-menu {background-color: #ff7f00;}
+.menu {color: white;}
+.menu:hover {color: black;}
+
+.reservation {height: 250px;}
+.info-side {background-color: #cc6600; color: white;}
+.info-center {background-color: #ee7700; color: white;}
