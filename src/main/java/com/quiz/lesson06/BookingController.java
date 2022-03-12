@@ -90,5 +90,19 @@ public class BookingController {
 		return "lesson06/booking/info_template";
 	}
 	
+	@ResponseBody
+	@PostMapping("/booking_info")
+	public Map<String, Object> getBooking(
+			@RequestParam("name") String name,
+			@RequestParam("phoneNumber") String phoneNumber
+	) {
+		Map<String, Object> result = new HashMap<>();
+		
+		// DB select
+		bookingBO.getBooking(name, phoneNumber);
+		
+		return result;
+	}
+	
 	
 }
