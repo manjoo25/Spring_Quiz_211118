@@ -50,7 +50,7 @@ public class Lesson06Quiz01Controller {
 	
 	// 요청 URL : http://localhost/lesson06/quiz01/favorite_list_view
 	@RequestMapping("/lesson06/quiz01/favorite_list_view")
-	public String favoriteListView(Model model) {// 그냥 화면이기 때문에 모델이 가능하다
+	public String favoriteListView(Model model) { // 그냥 화면이기 때문에 모델이 가능하다
 		// db select
 		List<Favorite> favoriteList = favoriteBO.getFavoriteList();
 		
